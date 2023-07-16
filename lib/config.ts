@@ -1,6 +1,6 @@
 // configuration for app
 
-import { Peer } from "@aws-cdk/aws-ec2";
+import { Peer } from "aws-cdk-lib/aws-ec2";
 import * as path from "path";
 
 // read config from .env and .env.local

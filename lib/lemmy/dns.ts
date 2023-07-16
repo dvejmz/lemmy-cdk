@@ -1,14 +1,14 @@
-import { ApplicationLoadBalancer } from "@aws-cdk/aws-elasticloadbalancingv2";
+import { ApplicationLoadBalancer } from "aws-cdk-lib/aws-elasticloadbalancingv2";
 import {
   AaaaRecord,
   ARecord,
   IHostedZone,
   RecordTarget,
-} from "@aws-cdk/aws-route53";
+} from "aws-cdk-lib/aws-route53";
 import {
   CloudFrontTarget,
   LoadBalancerTarget,
-} from "@aws-cdk/aws-route53-targets";
+} from "aws-cdk-lib/aws-route53-targets";
 import * as core from "aws-cdk-lib";
 import { SiteCDN } from "../cdn";
 
@@ -17,9 +17,9 @@ interface IDomainProps {
   cdn: SiteCDN;
   lemmyLoadBalancer: ApplicationLoadBalancer;
 }
-export class LemmyDomain extends core.Construct {
+export class LemmyDomain extends Construct {
   constructor(
-    scope: core.Construct,
+    scope: Construct,
     id: string,
     { zone, cdn, lemmyLoadBalancer }: IDomainProps
   ) {

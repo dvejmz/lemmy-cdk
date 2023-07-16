@@ -1,5 +1,6 @@
-import { SecurityGroup, Vpc } from "@aws-cdk/aws-ec2";
-import * as rds from "@aws-cdk/aws-rds";
+import { SecurityGroup, Vpc } from "aws-cdk-lib/aws-ec2";
+import { Construct } from 'constructs';
+import * as rds from "aws-cdk-lib/aws-rds";
 import * as core from "aws-cdk-lib";
 import { siteConfig } from "./config";
 
@@ -9,11 +10,11 @@ interface ILemmyAppProps {
   vpc: Vpc;
 }
 
-export class Database extends core.Construct {
+export class Database extends Construct {
   cluster: rds.ServerlessCluster;
   securityGroup: SecurityGroup;
 
-  constructor(scope: core.Construct, id: string, { vpc }: ILemmyAppProps) {
+  constructor(scope: Construct, id: string, { vpc }: ILemmyAppProps) {
     super(scope, id);
 
     this.securityGroup = new SecurityGroup(this, "DBSecurityGroup", {

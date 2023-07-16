@@ -1,9 +1,9 @@
-import { Port, SecurityGroup, Vpc } from "@aws-cdk/aws-ec2";
-import * as ecs from "@aws-cdk/aws-ecs";
-import { ServerlessCluster } from "@aws-cdk/aws-rds";
-import { NamespaceType } from "@aws-cdk/aws-servicediscovery";
+import { Port, SecurityGroup, Vpc } from "aws-cdk-lib/aws-ec2";
+import * as ecs from "aws-cdk-lib/aws-ecs";
+import { ServerlessCluster } from "aws-cdk-lib/aws-rds";
+import { NamespaceType } from "aws-cdk-lib/aws-servicediscovery";
 import * as core from "aws-cdk-lib";
-import { FileSystem } from "@aws-cdk/aws-efs";
+import { FileSystem } from "aws-cdk-lib/aws-efs";
 import { FRONTEND_NAME, LemmyFrontend } from "./frontend";
 import { IFramely, IFRAMELY_NAME, IFRAMELY_PORT } from "./iframely";
 import { LemmyLoadBalancer } from "./loadbalancer";
@@ -13,7 +13,7 @@ import {
   FargateService,
   Volume,
   FargateTaskDefinition,
-} from "@aws-cdk/aws-ecs";
+} from "aws-cdk-lib/aws-ecs";
 import { BACKEND_NAME, LemmyBackend } from "./backend";
 
 export interface IECSProps {
@@ -24,9 +24,9 @@ export interface IECSProps {
   fs: FileSystem;
 }
 
-export class LemmyECS extends core.Construct {
+export class LemmyECS extends Construct {
   constructor(
-    scope: core.Construct,
+    scope: Construct,
     id: string,
     { vpc, fs, db, lemmyLoadBalancer, dbSecurityGroup }: IECSProps
   ) {

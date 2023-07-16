@@ -1,5 +1,5 @@
-import { Port, Vpc } from "@aws-cdk/aws-ec2";
-import { FileSystem, LifecyclePolicy, PerformanceMode } from "@aws-cdk/aws-efs";
+import { Port, Vpc } from "aws-cdk-lib/aws-ec2";
+import { FileSystem, LifecyclePolicy, PerformanceMode } from "aws-cdk-lib/aws-efs";
 import * as cdk from "aws-cdk-lib";
 import { RemovalPolicy } from "aws-cdk-lib";
 import { Bastion } from "./bastion";

@@ -1,14 +1,14 @@
-import { Certificate } from "@aws-cdk/aws-certificatemanager";
-import { Distribution, ViewerProtocolPolicy } from "@aws-cdk/aws-cloudfront";
-import { S3Origin } from "@aws-cdk/aws-cloudfront-origins";
+import { Certificate } from "aws-cdk-lib/aws-certificatemanager";
+import { Distribution, ViewerProtocolPolicy } from "aws-cdk-lib/aws-cloudfront";
+import { S3Origin } from "aws-cdk-lib/aws-cloudfront-origins";
 import {
   AaaaRecord,
   ARecord,
   IHostedZone,
   RecordTarget,
-} from "@aws-cdk/aws-route53";
-import { CloudFrontTarget } from "@aws-cdk/aws-route53-targets";
-import { Bucket, RedirectProtocol } from "@aws-cdk/aws-s3";
+} from "aws-cdk-lib/aws-route53";
+import { CloudFrontTarget } from "aws-cdk-lib/aws-route53-targets";
+import { Bucket, RedirectProtocol } from "aws-cdk-lib/aws-s3";
 import * as core from "aws-cdk-lib";
 import { siteConfig } from "./config";
 
@@ -19,8 +19,8 @@ interface IDomainProps {
 // redirect foo.com to www.foo.com
 // creates a S3 static bucket to perform the redirect
 // creates a CloudFront distribution to terminate SSL
-export class RootRedirect extends core.Construct {
-  constructor(scope: core.Construct, id: string, { zone }: IDomainProps) {
+export class RootRedirect extends Construct {
+  constructor(scope: Construct, id: string, { zone }: IDomainProps) {
     super(scope, id);
 
     // Create a S3 website bucket that redirects domainName to www.domainName

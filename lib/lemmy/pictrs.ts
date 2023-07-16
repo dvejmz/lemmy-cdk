@@ -1,11 +1,11 @@
-import { SecurityGroup } from "@aws-cdk/aws-ec2";
+import { SecurityGroup } from "aws-cdk-lib/aws-ec2";
 import {
   ContainerImage,
   LogDriver,
   Protocol,
   TaskDefinition,
   Volume,
-} from "@aws-cdk/aws-ecs";
+} from "aws-cdk-lib/aws-ecs";
 import * as core from "aws-cdk-lib";
 
 interface IPictrsProps {
@@ -17,11 +17,11 @@ export const PICTRS_PORT = 8080;
 export const PICTRS_NAME = "pictrs";
 const PICTRS_IMAGE = "asonix/pictrs:v0.3.0-alpha.7-r0";
 
-export class Pictrs extends core.Construct {
+export class Pictrs extends Construct {
   securityGroup: SecurityGroup;
 
   constructor(
-    scope: core.Construct,
+    scope: Construct,
     id: string,
     { taskDef, assetVolume }: IPictrsProps
   ) {

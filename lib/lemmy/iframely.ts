@@ -4,7 +4,7 @@ import {
   LogDriver,
   Protocol,
   TaskDefinition,
-} from "@aws-cdk/aws-ecs";
+} from "aws-cdk-lib/aws-ecs";
 import * as core from "aws-cdk-lib";
 
 interface IIFramelyProps {
@@ -15,10 +15,10 @@ export const IFRAMELY_PORT = 8061;
 export const IFRAMELY_IMAGE = "dogbin/iframely:latest";
 export const IFRAMELY_NAME = "iframely";
 
-export class IFramely extends core.Construct {
+export class IFramely extends Construct {
   container: ContainerDefinition;
 
-  constructor(scope: core.Construct, id: string, { taskDef }: IIFramelyProps) {
+  constructor(scope: Construct, id: string, { taskDef }: IIFramelyProps) {
     super(scope, id);
 
     const container = taskDef.addContainer(IFRAMELY_NAME, {

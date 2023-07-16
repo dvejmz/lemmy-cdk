@@ -5,7 +5,7 @@ import {
   SecurityGroup,
   SubnetType,
   Vpc,
-} from "@aws-cdk/aws-ec2";
+} from "aws-cdk-lib/aws-ec2";
 import * as core from "aws-cdk-lib";
 import { siteConfig } from "./config";
 
@@ -15,11 +15,11 @@ interface IBastionProps {
 
 // Optional EC2 host to provide an entrypoint into the VPC
 // useful for accessing the database
-export class Bastion extends core.Construct {
+export class Bastion extends Construct {
   securityGroup: SecurityGroup;
   elasticIp: CfnEIP;
 
-  constructor(scope: core.Construct, id: string, { vpc }: IBastionProps) {
+  constructor(scope: Construct, id: string, { vpc }: IBastionProps) {
     super(scope, id);
 
     const securityGroup = new SecurityGroup(this, "SecGroup", {

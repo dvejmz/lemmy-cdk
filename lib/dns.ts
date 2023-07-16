@@ -1,5 +1,5 @@
-import { ApplicationLoadBalancer } from "@aws-cdk/aws-elasticloadbalancingv2";
-import { ARecord, HostedZone, RecordTarget } from "@aws-cdk/aws-route53";
+import { ApplicationLoadBalancer } from "aws-cdk-lib/aws-elasticloadbalancingv2";
+import { ARecord, HostedZone, RecordTarget } from "aws-cdk-lib/aws-route53";
 import * as core from "aws-cdk-lib";
 import { Duration } from "aws-cdk-lib";
 import { Bastion } from "./bastion";
@@ -14,9 +14,9 @@ interface IDomainProps {
   cdn: SiteCDN;
 }
 
-export class DNS extends core.Construct {
+export class DNS extends Construct {
   constructor(
-    scope: core.Construct,
+    scope: Construct,
     id: string,
     { lemmyLoadBalancer, bastion, cdn }: IDomainProps
   ) {

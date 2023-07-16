@@ -1,4 +1,4 @@
-import { Certificate } from "@aws-cdk/aws-certificatemanager";
+import { Certificate } from "aws-cdk-lib/aws-certificatemanager";
 import {
   AllowedMethods,
   CachePolicy,
@@ -8,9 +8,9 @@ import {
   OriginProtocolPolicy,
   OriginRequestPolicy,
   ViewerProtocolPolicy,
-} from "@aws-cdk/aws-cloudfront";
-import { LoadBalancerV2Origin } from "@aws-cdk/aws-cloudfront-origins";
-import { Code, Runtime } from "@aws-cdk/aws-lambda";
+} from "aws-cdk-lib/aws-cloudfront";
+import { LoadBalancerV2Origin } from "aws-cdk-lib/aws-cloudfront-origins";
+import { Code, Runtime } from "aws-cdk-lib/aws-lambda";
 import * as core from "aws-cdk-lib";
 import * as path from "path";
 import { siteConfig } from "./config";
@@ -21,10 +21,10 @@ interface ISiteCDNProps {
   lemmyLoadBalancer: LemmyLoadBalancer;
 }
 
-export class SiteCDN extends core.Construct {
+export class SiteCDN extends Construct {
   distribution: Distribution;
 
-  constructor(scope: core.Construct, id: string, props: ISiteCDNProps) {
+  constructor(scope: Construct, id: string, props: ISiteCDNProps) {
     super(scope, id);
 
     // our load balancer for internal services

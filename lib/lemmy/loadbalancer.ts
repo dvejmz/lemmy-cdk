@@ -1,4 +1,4 @@
-import { Vpc } from "@aws-cdk/aws-ec2";
+import { Vpc } from "aws-cdk-lib/aws-ec2";
 import {
   AddApplicationActionProps,
   ApplicationLoadBalancer,
@@ -8,7 +8,7 @@ import {
   ListenerAction,
   ListenerCondition,
   TargetType,
-} from "@aws-cdk/aws-elasticloadbalancingv2";
+} from "aws-cdk-lib/aws-elasticloadbalancingv2";
 import * as core from "aws-cdk-lib";
 import { Duration } from "aws-cdk-lib";
 import { siteConfig } from "../config";
@@ -20,13 +20,13 @@ interface ILBProps {
   vpc: Vpc;
 }
 
-export class LemmyLoadBalancer extends core.Construct {
+export class LemmyLoadBalancer extends Construct {
   backendTargetGroup: ApplicationTargetGroup;
   frontendTargetGroup: ApplicationTargetGroup;
   iframelyTargetGroup: ApplicationTargetGroup;
   alb: ApplicationLoadBalancer;
 
-  constructor(scope: core.Construct, id: string, { vpc }: ILBProps) {
+  constructor(scope: Construct, id: string, { vpc }: ILBProps) {
     super(scope, id);
 
     // ALB
