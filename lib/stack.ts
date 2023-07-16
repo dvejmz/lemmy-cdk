@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 import { Port, Vpc } from "aws-cdk-lib/aws-ec2";
 import { FileSystem, LifecyclePolicy, PerformanceMode } from "aws-cdk-lib/aws-efs";
 import * as cdk from "aws-cdk-lib";
@@ -11,7 +12,7 @@ import { LemmyECS } from "./lemmy/ecs";
 import { LemmyLoadBalancer } from "./lemmy/loadbalancer";
 
 export class Stack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // VPC

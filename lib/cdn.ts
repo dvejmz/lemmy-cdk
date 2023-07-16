@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 import { Certificate } from "aws-cdk-lib/aws-certificatemanager";
 import {
   AllowedMethods,

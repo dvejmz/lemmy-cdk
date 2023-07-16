@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 import { SecurityGroup } from "aws-cdk-lib/aws-ec2";
 import {
   ContainerImage,

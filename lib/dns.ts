@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 import { ApplicationLoadBalancer } from "aws-cdk-lib/aws-elasticloadbalancingv2";
 import { ARecord, HostedZone, RecordTarget } from "aws-cdk-lib/aws-route53";
 import * as core from "aws-cdk-lib";

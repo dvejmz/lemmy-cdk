@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 import { Vpc } from "aws-cdk-lib/aws-ec2";
 import {
   AddApplicationActionProps,

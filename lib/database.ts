@@ -1,5 +1,5 @@
+import { Construct } from "constructs";
 import { SecurityGroup, Vpc } from "aws-cdk-lib/aws-ec2";
-import { Construct } from 'constructs';
 import * as rds from "aws-cdk-lib/aws-rds";
 import * as core from "aws-cdk-lib";
 import { siteConfig } from "./config";

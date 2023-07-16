@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 import { Certificate } from "aws-cdk-lib/aws-certificatemanager";
 import { Distribution, ViewerProtocolPolicy } from "aws-cdk-lib/aws-cloudfront";
 import { S3Origin } from "aws-cdk-lib/aws-cloudfront-origins";

@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 // configuration for app
 
 import { Peer } from "aws-cdk-lib/aws-ec2";

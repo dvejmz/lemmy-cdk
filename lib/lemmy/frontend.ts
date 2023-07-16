@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 import * as path from 'path';
 import { SecurityGroup } from "@aws-cdk/aws-ec2";
 import {

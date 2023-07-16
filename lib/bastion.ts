@@ -1,3 +1,4 @@
+import { Construct } from "constructs";
 import {
   BastionHostLinux,
   CfnEIP,
