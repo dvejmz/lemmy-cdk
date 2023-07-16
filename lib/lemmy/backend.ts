@@ -1,3 +1,4 @@
+import * as path from 'path';
 import {
   ContainerDefinition,
   ContainerImage,
@@ -54,7 +55,7 @@ export class LemmyBackend extends core.Construct {
     });
 
     const backendContainer = taskDef.addContainer(BACKEND_NAME, {
-      image: ContainerImage.fromAsset(siteConfig.lemmyDir),
+      image: ContainerImage.fromAsset(path.join(siteConfig.lemmyDir, 'docker')),
       essential: true,
       environment: {
         // provide secrets

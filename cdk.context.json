@@ -20,5 +20,17 @@
   "hosted-zone:account=450542611688:domainName=federation.dev:region=us-east-1": {
     "Id": "/hostedzone/Z0266198IOHWFCMZWF2",
     "Name": "federation.dev."
+  },
+  "availability-zones:account=713230053809:region=us-east-1": [
+    "us-east-1a",
+    "us-east-1b",
+    "us-east-1c",
+    "us-east-1d",
+    "us-east-1e",
+    "us-east-1f"
+  ],
+  "hosted-zone:account=713230053809:domainName=500asaservice.com:region=us-east-1": {
+    "Id": "/hostedzone/Z01447581XKDCQ6JJ9SN5",
+    "Name": "500asaservice.com."
   }
 }
