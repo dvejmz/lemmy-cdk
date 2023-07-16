@@ -11,3 +11,6 @@ cdk.out
 .env.local
 
 !lib/edge-lambda/*.js
+
+.yarn/
+.yarnrc.yml
