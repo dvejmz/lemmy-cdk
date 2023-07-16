@@ -18,11 +18,11 @@ interface ILemmyFrontendProps {
 export const FRONTEND_PORT = 1234;
 export const FRONTEND_NAME = "lemmy-ui";
 
-export class LemmyFrontend extends core.Construct {
+export class LemmyFrontend extends Construct {
   backendContainer: SecurityGroup;
 
   constructor(
-    scope: core.Construct,
+    scope: Construct,
     id: string,
     { taskDef }: ILemmyFrontendProps
   ) {

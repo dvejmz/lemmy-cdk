@@ -37,11 +37,11 @@ const makeDatabaseUrl = (db: ServerlessCluster) => {
   ].join("/");
 };
 
-export class LemmyBackend extends core.Construct {
+export class LemmyBackend extends Construct {
   backendContainer: ContainerDefinition;
 
   constructor(
-    scope: core.Construct,
+    scope: Construct,
     id: string,
     { taskDef, db }: ILemmyAppProps
   ) {
