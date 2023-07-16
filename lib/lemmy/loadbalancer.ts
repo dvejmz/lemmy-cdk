@@ -9,8 +9,8 @@ import {
   ListenerCondition,
   TargetType,
 } from "@aws-cdk/aws-elasticloadbalancingv2";
-import * as core from "@aws-cdk/core";
-import { Duration } from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
+import { Duration } from "aws-cdk-lib";
 import { siteConfig } from "../config";
 import { BACKEND_PORT } from "./backend";
 import { FRONTEND_PORT } from "./frontend";

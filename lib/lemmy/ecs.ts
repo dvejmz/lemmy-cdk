@@ -2,7 +2,7 @@ import { Port, SecurityGroup, Vpc } from "@aws-cdk/aws-ec2";
 import * as ecs from "@aws-cdk/aws-ecs";
 import { ServerlessCluster } from "@aws-cdk/aws-rds";
 import { NamespaceType } from "@aws-cdk/aws-servicediscovery";
-import * as core from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
 import { FileSystem } from "@aws-cdk/aws-efs";
 import { FRONTEND_NAME, LemmyFrontend } from "./frontend";
 import { IFramely, IFRAMELY_NAME, IFRAMELY_PORT } from "./iframely";

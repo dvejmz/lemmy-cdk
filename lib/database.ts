@@ -1,6 +1,6 @@
 import { SecurityGroup, Vpc } from "@aws-cdk/aws-ec2";
 import * as rds from "@aws-cdk/aws-rds";
-import * as core from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
 import { siteConfig } from "./config";
 
 export const DB_NAME = "lemmy";

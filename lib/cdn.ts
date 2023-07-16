@@ -11,7 +11,7 @@ import {
 } from "@aws-cdk/aws-cloudfront";
 import { LoadBalancerV2Origin } from "@aws-cdk/aws-cloudfront-origins";
 import { Code, Runtime } from "@aws-cdk/aws-lambda";
-import * as core from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
 import * as path from "path";
 import { siteConfig } from "./config";
 import { IFRAMELY_PORT } from "./lemmy/iframely";

@@ -5,7 +5,7 @@ import {
   Protocol,
   TaskDefinition,
 } from "@aws-cdk/aws-ecs";
-import * as core from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
 
 interface IIFramelyProps {
   taskDef: TaskDefinition;

@@ -1,7 +1,7 @@
 import { ApplicationLoadBalancer } from "@aws-cdk/aws-elasticloadbalancingv2";
 import { ARecord, HostedZone, RecordTarget } from "@aws-cdk/aws-route53";
-import * as core from "@aws-cdk/core";
-import { Duration } from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
+import { Duration } from "aws-cdk-lib";
 import { Bastion } from "./bastion";
 import { SiteCDN } from "./cdn";
 import { siteConfig } from "./config";

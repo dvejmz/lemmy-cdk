@@ -6,7 +6,7 @@ import {
   TaskDefinition,
   Volume,
 } from "@aws-cdk/aws-ecs";
-import * as core from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
 
 interface IPictrsProps {
   taskDef: TaskDefinition;

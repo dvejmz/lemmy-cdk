@@ -6,7 +6,7 @@ import {
   SubnetType,
   Vpc,
 } from "@aws-cdk/aws-ec2";
-import * as core from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
 import { siteConfig } from "./config";
 
 interface IBastionProps {

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import * as cdk from "@aws-cdk/core";
+import * as cdk from "aws-cdk-lib";
 import "source-map-support/register";
 import { siteConfig } from "../lib/config";
 import { Stack } from "../lib/stack";

@@ -9,7 +9,7 @@ import {
   CloudFrontTarget,
   LoadBalancerTarget,
 } from "@aws-cdk/aws-route53-targets";
-import * as core from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
 import { SiteCDN } from "../cdn";
 
 interface IDomainProps {

@@ -9,7 +9,7 @@ import {
 } from "@aws-cdk/aws-route53";
 import { CloudFrontTarget } from "@aws-cdk/aws-route53-targets";
 import { Bucket, RedirectProtocol } from "@aws-cdk/aws-s3";
-import * as core from "@aws-cdk/core";
+import * as core from "aws-cdk-lib";
 import { siteConfig } from "./config";
 
 interface IDomainProps {
