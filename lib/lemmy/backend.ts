@@ -6,10 +6,10 @@ import {
   LogDriver,
   Protocol,
   TaskDefinition,
-} from "@aws-cdk/aws-ecs";
-import { ServerlessCluster } from "@aws-cdk/aws-rds";
-import { Secret } from "@aws-cdk/aws-secretsmanager";
-import * as core from "@aws-cdk/core";
+} from "aws-cdk-lib/aws-ecs";
+import { ServerlessCluster } from "aws-cdk-lib/aws-rds";
+import { Secret } from "aws-cdk-lib/aws-secretsmanager";
+import * as core from "aws-cdk-lib";
 import { siteConfig } from "../config";
 import { DB_NAME } from "../database";
 import { IFRAMELY_NAME, IFRAMELY_PORT } from "./iframely";

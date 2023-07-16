@@ -1,13 +1,13 @@
 import { Construct } from "constructs";
 import * as path from 'path';
-import { SecurityGroup } from "@aws-cdk/aws-ec2";
+import { SecurityGroup } from "aws-cdk-lib/aws-ec2";
 import {
   ContainerImage,
   LogDriver,
   Protocol,
   TaskDefinition,
-} from "@aws-cdk/aws-ecs";
-import * as core from "@aws-cdk/core";
+} from "aws-cdk-lib/aws-ecs";
+import * as core from "aws-cdk-lib";
 import { siteConfig } from "../config";
 import { BACKEND_NAME, BACKEND_PORT } from "./backend";
 
