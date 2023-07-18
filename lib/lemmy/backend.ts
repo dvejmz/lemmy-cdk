@@ -56,7 +56,7 @@ export class LemmyBackend extends Construct {
     });
 
     const backendContainer = taskDef.addContainer(BACKEND_NAME, {
-      image: ContainerImage.fromAsset(path.join(siteConfig.lemmyDir, 'docker')),
+      image: ContainerImage.fromRegistry('dessalines/lemmy'),
       essential: true,
       environment: {
         // provide secrets
