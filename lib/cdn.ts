@@ -12,7 +12,6 @@ import {
 } from "aws-cdk-lib/aws-cloudfront";
 import { LoadBalancerV2Origin } from "aws-cdk-lib/aws-cloudfront-origins";
 import { Code, Runtime } from "aws-cdk-lib/aws-lambda";
-import * as core from "aws-cdk-lib";
 import * as path from "path";
 import { siteConfig } from "./config";
 import { IFRAMELY_PORT } from "./lemmy/iframely";
@@ -47,9 +46,9 @@ export class SiteCDN extends Construct {
       this,
       "RewritePathsFunc",
       {
-        runtime: Runtime.NODEJS_12_X,
+        runtime: Runtime.NODEJS_18_X,
         handler: "cdn-rewrite-paths.handler",
-        code: Code.fromAsset(path.join(__dirname, "./edge-lambda")),
+        code: Code.fromAsset(path.join(__dirname, "edge-lambda")),
       }
     );
 
