@@ -27,12 +27,13 @@ export class Database extends Construct {
       parameterGroup: rds.ParameterGroup.fromParameterGroupName(
         this,
         "ParameterGroup",
-        "default.aurora-postgresql10"
+        "lemmy-db-parameter-group"
       ),
       defaultDatabaseName: DB_NAME,
       vpc,
       securityGroups: [this.securityGroup],
       clusterIdentifier: "lemmy",
+      removalPolicy: core.RemovalPolicy.DESTROY,
       scaling: {
         minCapacity: 2,
         maxCapacity: siteConfig.dbMaxCapacity,
