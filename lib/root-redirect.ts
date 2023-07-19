@@ -12,6 +12,7 @@ import { CloudFrontTarget } from "aws-cdk-lib/aws-route53-targets";
 import { Bucket, RedirectProtocol } from "aws-cdk-lib/aws-s3";
 import * as core from "aws-cdk-lib";
 import { siteConfig } from "./config";
+import {RemovalPolicy} from "aws-cdk-lib";
 
 interface IDomainProps {
   zone: IHostedZone;
@@ -26,6 +27,7 @@ export class RootRedirect extends Construct {
 
     // Create a S3 website bucket that redirects domainName to www.domainName
     const redirBucket = new Bucket(this, "RedirectToWWWBucket", {
+      removalPolicy: RemovalPolicy.DESTROY,
       // doesn't exist but is required
       websiteErrorDocument: "index.html",
       websiteIndexDocument: "index.html",
@@ -41,45 +43,45 @@ export class RootRedirect extends Construct {
 
     // CloudFront distribution in front of S3 bucket
     // handles SSL
-    const distribution = new Distribution(this, "RedirDistribution", {
-      comment: "Redirect to WWW",
-      enableLogging: false,
+    //const distribution = new Distribution(this, "RedirDistribution", {
+    //  comment: "Redirect to WWW",
+    //  enableLogging: false,
 
-      defaultBehavior: {
-        origin: new S3Origin(redirBucket),
-        viewerProtocolPolicy: siteConfig.httpsEnabled
-          ? ViewerProtocolPolicy.REDIRECT_TO_HTTPS
-          : ViewerProtocolPolicy.ALLOW_ALL,
-      },
+    //  defaultBehavior: {
+    //    origin: new S3Origin(redirBucket),
+    //    viewerProtocolPolicy: siteConfig.httpsEnabled
+    //      ? ViewerProtocolPolicy.REDIRECT_TO_HTTPS
+    //      : ViewerProtocolPolicy.ALLOW_ALL,
+    //  },
 
-      // optional HTTPS
-      ...(siteConfig.httpsEnabled && siteConfig.siteCertificateArn
-        ? {
-            certificate: Certificate.fromCertificateArn(
-              this,
-              "CDNCert",
-              siteConfig.siteCertificateArn
-            ),
-            domainNames: [siteConfig.siteDomainName],
-          }
-        : {}),
-    });
+    //  // optional HTTPS
+    //  ...(siteConfig.httpsEnabled && siteConfig.siteCertificateArn
+    //    ? {
+    //        certificate: Certificate.fromCertificateArn(
+    //          this,
+    //          "CDNCert",
+    //          siteConfig.siteCertificateArn
+    //        ),
+    //        domainNames: [siteConfig.siteDomainName],
+    //      }
+    //    : {}),
+    //});
 
-    // CDN target
-    const cdnTarget = RecordTarget.fromAlias(
-      new CloudFrontTarget(distribution)
-    );
+    //// CDN target
+    //const cdnTarget = RecordTarget.fromAlias(
+    //  new CloudFrontTarget(distribution)
+    //);
 
-    // root domainName - redirects to www.
-    new ARecord(this, "LemmyAWebRecord", {
-      zone,
-      target: cdnTarget,
-      recordName: "",
-    });
-    new AaaaRecord(this, "LemmyAAAAWebRecord", {
-      zone,
-      target: cdnTarget,
-      recordName: "",
-    });
+    //// root domainName - redirects to www.
+    //new ARecord(this, "LemmyAWebRecord", {
+    //  zone,
+    //  target: cdnTarget,
+    //  recordName: "",
+    //});
+    //new AaaaRecord(this, "LemmyAAAAWebRecord", {
+    //  zone,
+    //  target: cdnTarget,
+    //  recordName: "",
+    //});
   }
 }

@@ -30,7 +30,7 @@ export class LemmyFrontend extends Construct {
 
     const frontendContainer = taskDef.addContainer(FRONTEND_NAME, {
       essential: true,
-      image: ContainerImage.fromRegistry('dessalines/lemmy-ui'),
+      image: ContainerImage.fromRegistry('dessalines/lemmy-ui:0.9.9'),
       environment: {
         LEMMY_INTERNAL_HOST: `localhost:${BACKEND_PORT}`,
         LEMMY_EXTERNAL_HOST: siteConfig.siteDomainName,

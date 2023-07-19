@@ -39,7 +39,7 @@ export class Stack extends cdk.Stack {
       encrypted: true,
       lifecyclePolicy: LifecyclePolicy.AFTER_60_DAYS,
       performanceMode: PerformanceMode.GENERAL_PURPOSE,
-      removalPolicy: RemovalPolicy.RETAIN,
+      removalPolicy: RemovalPolicy.DESTROY,
       fileSystemName: "LemmyFS",
       enableAutomaticBackups: false,
     });
@@ -50,16 +50,16 @@ export class Stack extends cdk.Stack {
     });
 
     // CDN
-    const cdn = new SiteCDN(this, "CDN", {
-      lemmyLoadBalancer,
-    });
+    //const cdn = new SiteCDN(this, "CDN", {
+    //  lemmyLoadBalancer,
+    //});
 
-    // DNS
-    const domain = new DNS(this, "DNS", {
-      lemmyLoadBalancer: lemmyLoadBalancer.alb,
-      bastion,
-      cdn,
-    });
+    //// DNS
+    //const domain = new DNS(this, "DNS", {
+    //  lemmyLoadBalancer: lemmyLoadBalancer.alb,
+    //  bastion,
+    //  cdn,
+    //});
 
     // ECS
     const ecs = new LemmyECS(this, "LemmyECS", {

@@ -56,7 +56,7 @@ export class LemmyBackend extends Construct {
     });
 
     const backendContainer = taskDef.addContainer(BACKEND_NAME, {
-      image: ContainerImage.fromRegistry('dessalines/lemmy'),
+      image: ContainerImage.fromRegistry('dessalines/lemmy:0.9.9'),
       essential: true,
       environment: {
         // provide secrets

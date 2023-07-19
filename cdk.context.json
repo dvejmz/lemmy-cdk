@@ -32,5 +32,9 @@
   "hosted-zone:account=713230053809:domainName=500asaservice.com:region=us-east-1": {
     "Id": "/hostedzone/Z01447581XKDCQ6JJ9SN5",
     "Name": "500asaservice.com."
+  },
+  "hosted-zone:account=713230053809:domainName=sigsev.net:region=us-east-1": {
+    "Id": "/hostedzone/Z05961522G2M09HLDNZD6",
+    "Name": "sigsev.net."
   }
 }
